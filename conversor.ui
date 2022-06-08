@@ -6,13 +6,61 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>397</width>
+    <height>296</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Conversor</string>
   </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(52, 101, 164);</string>
+     </property>
+     <property name="title">
+      <string>Centigrados</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLCDNumber" name="lcdNumber">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(136, 138, 133);
+color: rgb(32, 74, 135);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDial" name="dial"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(233, 185, 110);</string>
+     </property>
+     <property name="title">
+      <string>Fahrenheit</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLCDNumber" name="lcdNumber_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(136, 138, 133);
+color: rgb(143, 89, 2);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDial" name="dial_2"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
