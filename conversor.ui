@@ -6,33 +6,45 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>397</width>
-    <height>296</height>
+    <width>572</width>
+    <height>323</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Conversor</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(186, 189, 182);</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="styleSheet">
-      <string notr="true">color: rgb(52, 101, 164);</string>
+      <string notr="true">color: rgb(92, 53, 102);
+</string>
      </property>
      <property name="title">
       <string>Centigrados</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLCDNumber" name="lcdNumber">
+       <widget class="QLCDNumber" name="outCent">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(136, 138, 133);
-color: rgb(32, 74, 135);</string>
+         <string notr="true">background-color: rgb(85, 87, 83);
+color: rgb(78, 154, 6);
+</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QDial" name="dial"/>
+       <widget class="QDial" name="inCent">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="minimum">
+         <number>-18</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -40,22 +52,30 @@ color: rgb(32, 74, 135);</string>
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="styleSheet">
-      <string notr="true">color: rgb(233, 185, 110);</string>
+      <string notr="true">color: rgb(32, 74, 135);
+</string>
      </property>
      <property name="title">
       <string>Fahrenheit</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QLCDNumber" name="lcdNumber_2">
+       <widget class="QLCDNumber" name="outFahr">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(136, 138, 133);
+         <string notr="true">background-color: rgb(85, 87, 83);
 color: rgb(143, 89, 2);</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QDial" name="dial_2"/>
+       <widget class="QDial" name="intFahr">
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>210</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -63,5 +83,38 @@ color: rgb(143, 89, 2);</string>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>inCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>145</x>
+     <y>79</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>intFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>425</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>79</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
